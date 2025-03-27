@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionnaire de tâches</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gestionnaire de tâches</h1>
+        <div class="filters">
+            <input type="text" id="search" placeholder="Rechercher..." />
+            <select id="filter-statut">
+                <option value="">Statut</option>
+                <option value="à faire">À faire</option>
+                <option value="en cours">En cours</option>
+                <option value="terminée">Terminée</option>
+            </select>
+            <select id="filter-priorite">
+                <option value="">Priorité</option>
+                <option value="basse">Basse</option>
+                <option value="moyenne">Moyenne</option>
+                <option value="haute">Haute</option>
+            </select>
+            <button id="apply-filters">Appliquer les filtres</button>
+        </div>
+    </header>
+
+    <main>
+        <!--formulaire d'ajout-->
+        <section class="task-form">
+            <h2>Ajouter une tâche</h2>
+            <form id="task-form">
+                <!-- Titre de la tâche -->
+                <label for="titre">Titre :</label>
+                <input type="text" id="titre" placeholder="Titre" required />
+        
+                <!-- Description de la tâche -->
+                <label for="description">Description :</label>
+                <textarea id="description" placeholder="Description"></textarea>
+        
+                <!-- Échéance de la tâche -->
+                <label for="echeance">Date limite :</label>
+                <input type="datetime-local" id="echeance" />
+        
+                <!-- Priorité -->
+                <label for="priorite">Priorité :</label>
+                <select id="priorite" required>
+                    <option value="basse">Basse</option>
+                    <option value="moyenne">Moyenne</option>
+                    <option value="haute">Haute</option>
+                </select>
+        
+                <!-- Statut -->
+                <label for="statut">Statut :</label>
+                <select id="statut" required>
+                    <option value="à faire">À faire</option>
+                    <option value="en cours">En cours</option>
+                    <option value="terminée">Terminée</option>
+                </select>
+        
+                <!-- Bouton pour ajouter la tâche -->
+                <button type="submit">Ajouter la tâche</button>
+            </form>
+        </section>
+
+        <!-- Formulaire d'édition de tâche (initialement caché) -->
+<section class="edit-task-form" style="display: none;">
+    <h2>Modifier une tâche</h2>
+    <form id="edit-task-form">
+        <!-- Titre de la tâche -->
+        <label for="edit-titre">Titre :</label>
+        <input type="text" id="edit-titre" required />
+
+        <!-- Description de la tâche -->
+        <label for="edit-description">Description :</label>
+        <textarea id="edit-description"></textarea>
+
+        <!-- Échéance de la tâche -->
+        <label for="edit-echeance">Date limite :</label>
+        <input type="datetime-local" id="edit-echeance" />
+
+        <!-- Priorité -->
+        <label for="edit-priorite">Priorité :</label>
+        <select id="edit-priorite" required>
+            <option value="basse">Basse</option>
+            <option value="moyenne">Moyenne</option>
+            <option value="haute">Haute</option>
+        </select>
+
+        <!-- Statut -->
+        <label for="edit-statut">Statut :</label>
+        <select id="edit-statut" required>
+            <option value="à faire">À faire</option>
+            <option value="en cours">En cours</option>
+            <option value="terminée">Terminée</option>
+        </select>
+
+        <!-- Bouton pour enregistrer la modification -->
+        <button type="submit">Enregistrer la modification</button>
+    </form>
+</section>
+
+        <section class="task-list">
+            <h2>Liste des tâches</h2>
+            <ul id="tasks-list">
+                <!-- Liste des tâches sera insérée ici -->
+            </ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
